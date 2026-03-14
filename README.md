@@ -5,16 +5,15 @@
 
 The template is used for both Java and Rust. It is structured as follows:
 
-- `project.toml`: Configuration file (team name, programming language, bonus …)
 - `crates/`: Rust code
   - `ticket-sale-core`: Infrastructure for working with requests
-  - `ticket-sale-rocket`: Your implementation should go here
-  - `ticket-sale-server`: HTTP server binary using your implementation
+  - `ticket-sale-rocket`: The implementation 
+  - `ticket-sale-server`: HTTP server binary using the implementation
   - `ticket-sale-tests`: Automated integration tests (can be used for Java as well)
 - `src/`: Java code
   - `main/java/com/pseuco/cp24/`: Java source code of the project
       - `request`: Infrastructure for working with requests
-      - `rocket`: Your implementation should go here
+      - `rocket`: The implementation
       - `slug`: A sequential reference implementation
   - `test`: Unit tests
 
@@ -41,9 +40,9 @@ If you use Rust, Cargo is your friend:
 
 - `cargo run -p ticket-sale-server` compiles and starts the ticket sales system.
 - `cargo doc` generates API documentation. `cargo doc --open` additionally opens the generated documentation in a web browser.
-- `cargo test -p ticket-sale-rocket` runs the unit tests you write inside your implementation.
+- `cargo test -p ticket-sale-rocket` runs the unit tests you write inside the implementation.
 
-To pass flags (as listed in the project description) to the implementation, e.g., to execute the slug implementation, append them after a `--`: ```sh cargo run -p ticket-sale-server -- -slug```
+To pass flags to the implementation, e.g., to execute the slug implementation, append them after a `--`: ```sh cargo run -p ticket-sale-server -- -slug```
 
 
 ### Test Infrastructure
@@ -54,7 +53,7 @@ Running the test suite is possible via ```sh cargo test -p ticket-sale-tests --t
 
 If you use Java, please note that this will not build your Java project. You need to run `./gradlew jar` beforehand. If you are using Rust, Cargo takes care of recompiling the project.
 
-If you want to test your implementation’s performance, you should build the tests (as well as your project) in release mode. To this end, just add the `--release` flag to the command above: ```sh cargo test -p ticket-sale-tests --release --tests -- --show-output```
+If you want to test the implementation’s performance, build the tests (as well as the project) in release mode. To this end, just add the `--release` flag to the command above: ```sh cargo test -p ticket-sale-tests --release --tests -- --show-output```
 
 
 ### For Convenience: A `justfile` 🎉
@@ -64,18 +63,16 @@ Some of the commands above are a bit lengthy and may be hard to remember, some e
     Available recipes:
     build      # Build the project
     doc        # Generate API documentation
-    doc-open   # Generate API documentation and open it in your web browser
+    doc-open   # Generate API documentation and open it in the web browser
     help       # Print available recipes
     lang       # Get the detected programming language
     lint       # Run clippy on Rust code
-    run *FLAGS # Build and run the project for interaction with Cust-O-Matic 3000™
     spellcheck # Run CSpell
-    test       # Run the tests in crates/ticket-sale-tests/tests (use `just release=1 test` to benchmark your Rust implementation)
+    test       # Run the tests in crates/ticket-sale-tests/tests (use `just release=1 test` to benchmark the Rust implementation)
 
 For example, you can pass the command line options specified in the project description directly to `just run`, e.g., `just run -tickets 1337` to start the server with 1337 initially available tickets.
 
-`just` can automatically detect the programming language you selected in
-`project.toml`. However, this requires Python ≥ 3.11 to be installed and available via `python3`. If this is not the case on your system, you can select the language manually, for example: `just lang=rust test` or `just lang=java test`.
+`just` can automatically detect the programming language. However, this requires Python ≥ 3.11 to be installed and available via `python3`. If this is not the case on your system, you can select the language manually, for example: `just lang=rust test` or `just lang=java test`.
 
 
 ## Rust-Specific Remarks
