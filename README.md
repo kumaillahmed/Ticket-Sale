@@ -18,9 +18,6 @@ The template is used for both Java and Rust. It is structured as follows:
       - `slug`: A sequential reference implementation
   - `test`: Unit tests
 
-We initialized the `project.toml` according to your language preferences, but in case you want to switch the programming language, it is possible there. If you implement the bonus, also enable the `bonus-implemented` setting there.
-
-
 
 ## Running the Project
 
