@@ -165,3 +165,6 @@ You may assume that the safe interfaces provided by these crates are sound
 races or other kinds of undefined behavior). You are allowed to add other crates
 as dependencies, but you take full responsibility for soundness issues within
 them and we may ask you questions in about them as part of the defense.
+
+# Ticket-Sale
+4a884d5ba049608b491b1de3f301fd80d1db4d0e
