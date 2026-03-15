@@ -20,7 +20,7 @@ The template is used for both Java and Rust. It is structured as follows:
 
 ## Running the Project
 
-### Java ☕
+### Java 
 
 We use [Gradle](https://gradle.org/) to build the project. You can interact with Gradle from the terminal. The most important subcommands are:
 
@@ -34,7 +34,7 @@ Once you have built the JAR file, you can also run it without Gradle and supply 
 Running (and debugging) the project directly from VS Code without the commandline is also possible.
 
 
-### Rust 🦀
+### Rust 
 
 If you use Rust, Cargo is your friend:
 
@@ -56,7 +56,7 @@ If you use Java, please note that this will not build your Java project. You nee
 If you want to test the implementation’s performance, build the tests (as well as the project) in release mode. To this end, just add the `--release` flag to the command above: ```sh cargo test -p ticket-sale-tests --release --tests -- --show-output```
 
 
-### For Convenience: A `justfile` 🎉
+### For Convenience: A `justfile`
 
 Some of the commands above are a bit lengthy and may be hard to remember, some even depend on other commands. To make your life a bit easier, we provide a [`justfile`](https://just.systems/man/en/) with a simpler interface. To install `just` via Cargo, run `cargo install just`. A complete list of commands provided by our `justfile` can be obtained via `just help`:
 
