@@ -86,3 +86,9 @@ We use the following Rust libraries:
 - [`uuid`](https://docs.rs/uuid/latest/uuid/index.html) for server and customer ids
 
 You may assume that the safe interfaces provided by these crates are sound (i.e., no matter how you use them within Safe Rust, you will not cause data races or other kinds of undefined behavior). You are allowed to add other crates as dependencies, but you take full responsibility for soundness issues within them.
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+
+See the LICENSE file for details.
